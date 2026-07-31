@@ -27,3 +27,17 @@ function fullName(fname="ABES", lname="Engineering College"){
 }
 console.log(fullName());
 console.log(fullName("Anivaran","Dubey"));
+console.log("\n----Percentage----");
+
+function totalMarks(math, english, science) {
+    return math + english + science;
+}
+
+function percentage(total) {
+    return (total / 300) * 100;
+}
+
+var total = totalMarks(80, 56, 78);
+
+console.log("Total marks =", total);
+console.log("Percentage =", percentage(total));
