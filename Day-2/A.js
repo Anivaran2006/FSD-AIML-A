@@ -41,3 +41,14 @@ var total = totalMarks(80, 56, 78);
 
 console.log("Total marks =", total);
 console.log("Percentage =", percentage(total));
+console.log("====String object====");
+let name="Anivaran";
+console.log(name);
+console.log("=====String Methods=====");
+let str="Welcome Anivaran";
+// 1.toUpperCase
+console.log("UpperCase =",str.toUpperCase());
+// 2.toLowerCase
+console.log("LowerCase =",str.toLowerCase());
+// 3.Character
+console.log("Character at index 3 =",str.charAt(3));
