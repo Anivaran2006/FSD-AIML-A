@@ -52,3 +52,34 @@ console.log("UpperCase =",str.toUpperCase());
 console.log("LowerCase =",str.toLowerCase());
 // 3.Character
 console.log("Character at index 3 =",str.charAt(3));
+// 4.indexOf()
+console.log("Index of Java =",str.indexOf("Java"));
+// 5.lastIndexOf
+let message = "Javascript is easy. Javascript is powerful";
+console.log("Last index =", message.lastIndexOf("Javascript"));
+// 6.slice()
+console.log("Slice =", str.slice(0,7));
+// 7.split()
+let data = "HTML,CSS , JavaScript";
+let res = data.split(",");
+console.log("Split =", result);
+// 8.replace()
+let text = "I love Java";
+console.log(text.replace("Java","JavaScript"));
+// 9.concat()
+let first = "Anivaran";
+let last ="Dubey";
+console.log(first.concat(" ",last));
+console.log("====Includes====");
+let course = "Java";
+console.log(course.includes("Script"));
+var a = "Anivaran Dubey";
+console.log(a.includes("Aniv"));
+console.log(a.includes("aran"));
+console.log("=====Array Object====");
+let num=[10,20,50,56];
+console.log(num);
+console.log("------Array Method------");
+num.pop();
+console.log(num);
+
