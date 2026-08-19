@@ -82,4 +82,5 @@ console.log(num);
 console.log("------Array Method------");
 num.pop();
 console.log(num);
-
+console.log(num[0]);
+console.log(num[3]);
