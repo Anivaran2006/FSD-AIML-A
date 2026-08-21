@@ -84,3 +84,5 @@ num.pop();
 console.log(num);
 console.log(num[0]);
 console.log(num[3]);
+let math = [12,34,56];
+console.log("Round =", Math.round(5.6));
