@@ -1,6 +1,6 @@
 document.getElementById("myForm").addEventListener("submit", function(event) {
 
-    // Prevent form submission
+    // Stop form from submitting
     event.preventDefault();
 
     // Get values
@@ -19,45 +19,103 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
         document.getElementById("terms").checked;
 
 
-    // Email validation pattern
+    // Email pattern
     let emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-    // Phone validation pattern
-    // Exactly 10 digits
+    // Phone pattern
     let phonePattern =
         /^[0-9]{10}$/;
 
 
-    // Clear old messages
-    document.getElementById("error").innerText = "";
+    // Name validation
+    if (name === "") {
 
-    document.getElementById("success").innerText = "";
+        alert("Please enter your name.");
 
-
-    // Check all details
-    if (
-        name === "" ||
-        !emailPattern.test(email) ||
-        !phonePattern.test(phone) ||
-        password.length < 6 ||
-        password !== confirmPassword ||
-        !terms
-    ) {
-
-        // If details are incorrect
-        document.getElementById("error").innerText =
-            "Enter correct details. Registration cannot be done.";
-
+        return;
     }
 
-    else {
 
-        // If details are correct
-        document.getElementById("success").innerText =
-            "Registration Successful!";
+    // Email validation
+    if (email === "") {
 
+        alert("Please enter your email.");
+
+        return;
     }
+
+
+    if (!emailPattern.test(email)) {
+
+        alert("Please enter a valid email address.");
+
+        return;
+    }
+
+
+    // Phone validation
+    if (phone === "") {
+
+        alert("Please enter your phone number.");
+
+        return;
+    }
+
+
+    if (!phonePattern.test(phone)) {
+
+        alert("Please enter a valid 10 digit phone number.");
+
+        return;
+    }
+
+
+    // Password validation
+    if (password === "") {
+
+        alert("Please enter your password.");
+
+        return;
+    }
+
+
+    if (password.length < 6) {
+
+        alert("Password must be at least 6 characters.");
+
+        return;
+    }
+
+
+    // Confirm password validation
+    if (confirmPassword === "") {
+
+        alert("Please confirm your password.");
+
+        return;
+    }
+
+
+    if (password !== confirmPassword) {
+
+        alert("Passwords do not match.");
+
+        return;
+    }
+
+
+    // Terms validation
+    if (!terms) {
+
+        alert("Please accept the terms and conditions.");
+
+        return;
+    }
+
+
+    // Everything is correct
+    alert("Registration Successful!");
 
 });
