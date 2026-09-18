@@ -211,50 +211,67 @@
 
 // console.log("Sum =", sum(...numbers));
 //Without Constructor
+// class A{
+// name;
+// name="Anivaran";
+// show(){
+//     console.log("My name is:"+this.name);
+// }
+// }
+// let obj=new A();
+// obj.show();
+// //With constructor
+// class B{
+//     constructor(name){
+//         console.log("My name is:"+name);
+//     }
+// }
+// let obj1=new B("Anivaran");
+// class hello{
+// }
+// let h1=new hello("A.D");
+// //without constructor
+// class hello2{
+//     student="Anivaran";
+// }
+// let h2=new hello2();
+// console.log(h2.student);
+// //with constructor
+// class SectionA {
+//     constructor(name, rollNo, address, mobileNo) {
+//         this.name = name;
+//         this.rollNo = rollNo;
+//         this.address = address;
+//         this.mobileNo = mobileNo;
+//     }
+//     display() {
+//         console.log("Name:", this.name);
+//         console.log("Roll No:", this.rollNo);
+//         console.log("Address:", this.address);
+//         console.log("Mobile No:", this.mobileNo);
+//     }
+// }
+// const students = [
+//     new SectionA("Anivaran", 1, "Ghaziabad", "9876543210"),
+//     new SectionA("Arush", 2, "Kanpur", "9876543211"),
+//     new SectionA("Faraz", 3, "Lucknow", "9876543212"),
+//     new SectionA("Dhruv", 4, "Meerut", "9876543213"),
+//     new SectionA("Kanav", 5, "Kathua", "9876543214")
+// ];
+// students.forEach(student => student.display());
+
+//Static member and function
 class A{
-name;
-name="Anivaran";
-show(){
-    console.log("My name is:"+this.name);
-}
-}
-let obj=new A();
-obj.show();
-//With constructor
-class B{
-    constructor(name){
-        console.log("My name is:"+name);
+    static name="This is static member";
+    static display(){
+        console.log(A.name);
     }
 }
-let obj1=new B("Anivaran");
-class hello{
-}
-let h1=new hello("A.D");
-//without constructor
-class hello2{
-    student="Anivaran";
-}
-let h2=new hello2();
-console.log(h2.student);
-class SectionA {
-    constructor(name, rollNo, address, mobileNo) {
-        this.name = name;
-        this.rollNo = rollNo;
-        this.address = address;
-        this.mobileNo = mobileNo;
-    }
-    display() {
-        console.log("Name:", this.name);
-        console.log("Roll No:", this.rollNo);
-        console.log("Address:", this.address);
-        console.log("Mobile No:", this.mobileNo);
+A.display();
+class hello3{
+    static name="Example of static member";
+    static show(){
+        console.log("Hello class this is " + hello3.name);
     }
 }
-const students = [
-    new SectionA("Anivaran", 1, "Ghaziabad", "9876543210"),
-    new SectionA("Arush", 2, "Kanpur", "9876543211"),
-    new SectionA("Faraz", 3, "Lucknow", "9876543212"),
-    new SectionA("Dhruv", 4, "Meerut", "9876543213"),
-    new SectionA("Kanav", 5, "Kathua", "9876543214")
-];
-students.forEach(student => student.display());
+hello3.show();
