@@ -335,9 +335,10 @@ student3.displayResult();
 student.displayTotalStudents();
 //Bank Account Management System
 class BankAccount {
-    static bankName = "ABES Bank";
+    static bankName = "J&k Bank";
     static totalAccounts = 0;
     constructor(accountNo, holderName, balance = 0) {
+
         this.accountNo = accountNo;
         this.holderName = holderName;
         this.balance = balance;
