@@ -328,9 +328,53 @@ class student {
 }
 const student1 = new student("Anivaran", 1, 78);
 const student2 = new student("Utkarsh", 2, 30);
-const student3 = new student("Faraz", 3, 35);
+const student3 = new student("Faraz", 3, 80);
 student1.displayResult();
 student2.displayResult();
 student3.displayResult();
 student.displayTotalStudents();
-    
+//Bank Account Management System
+class BankAccount {
+    static bankName = "ABES Bank";
+    static totalAccounts = 0;
+    constructor(accountNo, holderName, balance = 0) {
+        this.accountNo = accountNo;
+        this.holderName = holderName;
+        this.balance = balance;
+        BankAccount.totalAccounts++;
+    }
+    deposit(amount) {
+        if (amount <= 0) {
+            console.log("Deposit amount must be greater than zero.");
+            return;
+        }
+        this.balance += amount;
+        console.log("Deposited:", amount);
+    }
+    withdraw(amount) {
+        if (amount <= 0) {
+            console.log("Withdrawal amount must be greater than zero.");
+            return;
+        }
+        if (amount > this.balance) {
+            console.log("Insufficient balance.");
+            return;
+        }
+        this.balance -= amount;
+        console.log("Withdrawn:", amount);
+    }
+    displayDetails() {
+        console.log("Account No:", this.accountNo);
+        console.log("Holder Name:", this.holderName);
+        console.log("Balance:", this.balance);
+    }
+    static displayBankDetails() {
+        console.log("Bank Name:", BankAccount.bankName);
+        console.log("Total Accounts:", BankAccount.totalAccounts);
+    }
+}
+const account1 = new BankAccount("AB001", "Anivaran", 10000);
+account1.deposit(2500);
+account1.withdraw(1500);
+account1.displayDetails();
+BankAccount.displayBankDetails();
