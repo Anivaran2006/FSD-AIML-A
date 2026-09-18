@@ -261,32 +261,76 @@
 // students.forEach(student => student.display());
 
 //Static member and function
-class A{
-    static name="This is static member";
-    static display(){
-        console.log(A.name);
+// class A{
+//     static name="This is static member";
+//     static display(){
+//         console.log(A.name);
+//     }
+// }
+// A.display();
+// class hello3{
+//     static name="Example of static member";
+//     static show(){
+//         console.log("Hello class this is " + hello3.name);
+//     }
+// }
+// hello3.show();
+// //Static method with instance method without constructor
+// class Student {
+//     name = "Anivaran";
+//     rollNo = 1;
+//     static showCollege() {
+//         console.log("College: ABES Engineering College");
+//     }
+//     displayStudent() {
+//         console.log("Name:", this.name);
+//         console.log("Roll No:", this.rollNo);
+//     }
+// }
+// Student.showCollege();
+// const student = new Student();
+// student.displayStudent();
+// class Student {
+//     name = "Anivaran";
+//     lastName = "Dubey";
+
+//     static showCollege() {
+//         console.log("College: ABES Engineering College");
+//     }
+
+//     show() {
+//         console.log(`First name: ${this.name}`);
+//         console.log(`Last name: ${this.lastName}`);
+//     }
+// }
+
+// Student.showCollege();
+// const student = new Student();
+// student.show();
+//University Student  Management System
+class student {
+    static studentCount = 0;
+    constructor(name, rollNo, marks) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+        student.studentCount++;
     }
-}
-A.display();
-class hello3{
-    static name="Example of static member";
-    static show(){
-        console.log("Hello class this is " + hello3.name);
+    static displayTotalStudents() {
+        console.log("Total students:", student.studentCount);
     }
-}
-hello3.show();
-//Static method with instance method without constructor
-class Student {
-    name = "Anivaran";
-    rollNo = 1;
-    static showCollege() {
-        console.log("College: ABES Engineering College");
-    }
-    displayStudent() {
+    displayResult() {
         console.log("Name:", this.name);
         console.log("Roll No:", this.rollNo);
+        console.log("Marks:", this.marks);
+        console.log("Result:", this.marks >= 40 ? "Passed" : "Failed");
     }
 }
-Student.showCollege();
-const student = new Student();
-student.displayStudent();
+const student1 = new student("Anivaran", 1, 78);
+const student2 = new student("Utkarsh", 2, 30);
+const student3 = new student("Faraz", 3, 35);
+student1.displayResult();
+student2.displayResult();
+student3.displayResult();
+student.displayTotalStudents();
+    
