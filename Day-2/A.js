@@ -103,50 +103,158 @@
 //         console.log("My job is:"+this.job);
 //     },
 // }
-const a={
-    name:"Arush",
-    salary:210,
-    display:function(){
-        console.log("This is my name:"+this.name);
-        console.log("This is my salary:"+this.salary);
-    },
-    incsalary:function(){
-        this.salary=this.salary+5000
-    }
-};
-a.display();
-a.incsalary();
-function show(){
-    console.log("My add:"+this.add);
-    console.log("My city:"+this.city);
-}
-e={ add:"Abes",
-    city:"Ghaziabad",
-    show:show
-};
-d={
-    add:"Crossing",
-    city:"Noida",
-    show:show
-};
-e.show();
-d.show();
-function college(){
-    console.log("Name : "+this.name);
-    console.log("Roll : "+this.roll);
-    console.log("Branch : "+this.branch);
-    console.log("Section : "+this.sec);
-}
-dep={
-    name: "Anivaran Dubey",
-    roll : 27,
-    college:college
-};
-clas={
-    branch:"AIML",
-    sec:"A",
-    college:college
-};
-dep.college();
-clas.college();
+// const a={
+//     name:"Arush",
+//     salary:210,
+//     display:function(){
+//         console.log("This is my name:"+this.name);
+//         console.log("This is my salary:"+this.salary);
+//     },
+//     incsalary:function(){
+//         this.salary=this.salary+5000
+//     }
+// };
+// a.display();
+// a.incsalary();
+// function show(){
+//     console.log("My add:"+this.add);
+//     console.log("My city:"+this.city);
+// }
+// e={ add:"Abes",
+//     city:"Ghaziabad",
+//     show:show
+// };
+// d={
+//     add:"Crossing",
+//     city:"Noida",
+//     show:show
+// };
+// e.show();
+// d.show();
+// function college(){
+//     console.log("Name : "+this.name);
+//     console.log("Roll : "+this.roll);
+//     console.log("Branch : "+this.branch);
+//     console.log("Section : "+this.sec);
+// }
+// dep={
+//     name: "Anivaran Dubey",
+//     roll : 27,
+//     college:college
+// };
+// clas={
+//     branch:"AIML",
+//     sec:"A",
+//     college:college
+// };
+// dep.college();
+// clas.college();
 
+// class Student {
+//     constructor(name, marks, grade) {
+//         this.name = name;
+//         this.marks = marks;
+//         this.grade = grade;
+//     }
+
+//     updateGrade() {
+//         this.grade = "A+";
+//     }
+
+//     display() {
+//         console.log("Name:", this.name);
+//         console.log("Marks:", this.marks);
+//         console.log("Grade:", this.grade);
+//     }
+// }
+
+// let student = new Student("Ravi", 80, "A");
+
+// student.updateGrade();
+
+// student.display();
+// function sum(...nums) {
+//     let total = 0;
+
+//     for (let num of nums) {
+//         total += num;
+//     }
+
+//     console.log("Sum =", total);
+//     return total;
+// }
+
+// sum(10, 20, 30, 40);
+
+// function sum(nums, ...args) {
+//     let total = nums;
+
+//     for (let i of args) {
+//         total = total + i;
+//     }
+//     console.log("hello Faraz");
+//     console.log("total =", total);
+//     return total;
+// 
+//  function sum(...numbers) {
+//     let total = 0;
+
+//     for (let num of numbers) {
+//         total += num;
+//     }
+
+//     return total;
+// }
+
+// let input = prompt("Enter numbers separated by spaces:");
+// let numbers = input.split(" ").map(Number);
+
+// console.log("Sum =", sum(...numbers));
+//Without Constructor
+class A{
+name;
+name="Anivaran";
+show(){
+    console.log("My name is:"+this.name);
+}
+}
+let obj=new A();
+obj.show();
+//With constructor
+class B{
+    constructor(name){
+        console.log("My name is:"+name);
+    }
+}
+let obj1=new B("Anivaran");
+class hello{
+}
+let h1=new hello("A.D");
+//without constructor
+class hello2{
+    student="Anivaran";
+}
+let h2=new hello2();
+console.log(h2.student);
+class SectionA {
+    constructor(name, rollNo, address, mobileNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.address = address;
+        this.mobileNo = mobileNo;
+    }
+    display() {
+        console.log("Name:", this.name);
+        console.log("Roll No:", this.rollNo);
+        console.log("Address:", this.address);
+        console.log("Mobile No:", this.mobileNo);
+    }
+}
+const students = [
+    new SectionA("Anivaran", 1, "Ghaziabad", "9876543210"),
+    new SectionA("Arush", 2, "Kanpur", "9876543211"),
+    new SectionA("Faraz", 3, "Lucknow", "9876543212"),
+    new SectionA("Dhruv", 4, "Meerut", "9876543213"),
+    new SectionA("Kanav", 5, "Kathua", "9876543214")
+];
+students.forEach(student => student.display());
