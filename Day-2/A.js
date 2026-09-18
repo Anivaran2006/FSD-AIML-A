@@ -275,3 +275,18 @@ class hello3{
     }
 }
 hello3.show();
+//Static method with instance method without constructor
+class Student {
+    name = "Anivaran";
+    rollNo = 1;
+    static showCollege() {
+        console.log("College: ABES Engineering College");
+    }
+    displayStudent() {
+        console.log("Name:", this.name);
+        console.log("Roll No:", this.rollNo);
+    }
+}
+Student.showCollege();
+const student = new Student();
+student.displayStudent();
