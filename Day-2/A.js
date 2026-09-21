@@ -308,74 +308,115 @@
 // const student = new Student();
 // student.show();
 //University Student  Management System
-class student {
-    static studentCount = 0;
-    constructor(name, rollNo, marks) {
-        this.name = name;
-        this.rollNo = rollNo;
-        this.marks = marks;
-        student.studentCount++;
-    }
-    static displayTotalStudents() {
-        console.log("Total students:", student.studentCount);
-    }
-    displayResult() {
-        console.log("Name:", this.name);
-        console.log("Roll No:", this.rollNo);
-        console.log("Marks:", this.marks);
-        console.log("Result:", this.marks >= 40 ? "Passed" : "Failed");
-    }
-}
-const student1 = new student("Anivaran", 1, 78);
-const student2 = new student("Utkarsh", 2, 30);
-const student3 = new student("Faraz", 3, 80);
-student1.displayResult();
-student2.displayResult();
-student3.displayResult();
-student.displayTotalStudents();
-//Bank Account Management System
-class BankAccount {
-    static bankName = "J&k Bank";
-    static totalAccounts = 0;
-    constructor(accountNo, holderName, balance = 0) {
+// class student {
+//     static studentCount = 0;
+//     constructor(name, rollNo, marks) {
+//         this.name = name;
+//         this.rollNo = rollNo;
+//         this.marks = marks;
+//         student.studentCount++;
+//     }
+//     static displayTotalStudents() {
+//         console.log("Total students:", student.studentCount);
+//     }
+//     displayResult() {
+//         console.log("Name:", this.name);
+//         console.log("Roll No:", this.rollNo);
+//         console.log("Marks:", this.marks);
+//         console.log("Result:", this.marks >= 40 ? "Passed" : "Failed");
+//     }
+// }
+// const student1 = new student("Anivaran", 1, 78);
+// const student2 = new student("Utkarsh", 2, 30);
+// const student3 = new student("Faraz", 3, 80);
+// student1.displayResult();
+// student2.displayResult();
+// student3.displayResult();
+// student.displayTotalStudents();
+// //Bank Account Management System
+// class BankAccount {
+//     static bankName = "J&k Bank";
+//     static totalAccounts = 0;
+//     constructor(accountNo, holderName, balance = 0) {
 
-        this.accountNo = accountNo;
-        this.holderName = holderName;
-        this.balance = balance;
-        BankAccount.totalAccounts++;
-    }
-    deposit(amount) {
-        if (amount <= 0) {
-            console.log("Deposit amount must be greater than zero.");
-            return;
-        }
-        this.balance += amount;
-        console.log("Deposited:", amount);
-    }
-    withdraw(amount) {
-        if (amount <= 0) {
-            console.log("Withdrawal amount must be greater than zero.");
-            return;
-        }
-        if (amount > this.balance) {
-            console.log("Insufficient balance.");
-            return;
-        }
-        this.balance -= amount;
-        console.log("Withdrawn:", amount);
-    }
-    displayDetails() {
-        console.log("Account No:", this.accountNo);
-        console.log("Holder Name:", this.holderName);
-        console.log("Balance:", this.balance);
-    }
-    static displayBankDetails() {
-        console.log("Bank Name:", BankAccount.bankName);
-        console.log("Total Accounts:", BankAccount.totalAccounts);
-    }
+//         this.accountNo = accountNo;
+//         this.holderName = holderName;
+//         this.balance = balance;
+//         BankAccount.totalAccounts++;
+//     }
+//     deposit(amount) {
+//         if (amount <= 0) {
+//             console.log("Deposit amount must be greater than zero.");
+//             return;
+//         }
+//         this.balance += amount;
+//         console.log("Deposited:", amount);
+//     }
+//     withdraw(amount) {
+//         if (amount <= 0) {
+//             console.log("Withdrawal amount must be greater than zero.");
+//             return;
+//         }
+//         if (amount > this.balance) {
+//             console.log("Insufficient balance.");
+//             return;
+//         }
+//         this.balance -= amount;
+//         console.log("Withdrawn:", amount);
+//     }
+//     displayDetails() {
+//         console.log("Account No:", this.accountNo);
+//         console.log("Holder Name:", this.holderName);
+//         console.log("Balance:", this.balance);
+//     }
+//     static displayBankDetails() {
+//         console.log("Bank Name:", BankAccount.bankName);
+//         console.log("Total Accounts:", BankAccount.totalAccounts);
+//     }
+// }
+// const account1 = new BankAccount("AB001", "Anivaran", 10000);
+// account1.deposit(2500);
+// account1.withdraw(1500);
+// account1.displayDetails();
+// BankAccount.displayBankDetails();
+//Employee and Manager payroll system 
+// class Employee {
+//    constructor(id,name, basicSalary) {
+//     this.id = id;
+//     this.name = name;
+//     this.basicSalary = basicSalary;
+//    }
+//    calculateSalary() {
+//     return this.basicSalary;
+//    }
+// }
+
+// class Manager extends Employee {
+//    constructor(id, name, basicSalary, incentive) {
+//     super(id, name, basicSalary);
+//     this.incentive = incentive;
+//    }
+//    calculateSalary() {
+//     return this.basicSalary + this.incentive;
+//    }
+// }
+
+// const employee = new Employee(1, "Anivaran", 30000);
+// const manager = new Manager(2, "Manager", 50000, 10000);
+
+// console.log("Employee salary:", employee.calculateSalary());
+// console.log("Manager salary:", manager.calculateSalary());
+
+//---Callback function-A callback function is a function that is passed as an argument to another function.-----
+function greet(name, callback) {
+    console.log("Hello " + name);
+    callback();
 }
-const account1 = new BankAccount("AB001", "Anivaran", 10000);
-account1.deposit(2500);
-account1.withdraw(1500);
-account1.displayDetails();
-BankAccount.displayBankDetails();
+greet("Anivaran", function() {
+    console.log("Welcome to CallBack Func");
+});
+console.log("Anivaran ")
+setTimeout(function() {
+    console.log("Arush");
+}, 2000);
+console.log("Faraz ") 
