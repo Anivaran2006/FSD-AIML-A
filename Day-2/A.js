@@ -408,15 +408,102 @@
 // console.log("Manager salary:", manager.calculateSalary());
 
 //---Callback function-A callback function is a function that is passed as an argument to another function.-----
-function greet(name, callback) {
-    console.log("Hello " + name);
-    callback();
+// function greet(name, callback) {
+//     console.log("Hello " + name);
+//     callback();
+// }
+// greet("Anivaran", function() {
+//     console.log("Welcome to CallBack Func");
+// });
+// console.log("Anivaran ")
+// setTimeout(function() {
+//     console.log("Arush");
+// }, 2000);
+// console.log("Faraz ") 
+// Qno:3
+class Employee {
+    constructor(id, name, basicSalary) {
+        this.id = id;
+        this.name = name;
+        this.basicSalary = basicSalary;
+    }
+    calculateSalary() {
+        return this.basicSalary;
+    }
 }
-greet("Anivaran", function() {
-    console.log("Welcome to CallBack Func");
-});
-console.log("Anivaran ")
-setTimeout(function() {
-    console.log("Arush");
-}, 2000);
-console.log("Faraz ") 
+class Manager extends Employee {
+    constructor(id, name, basicSalary, incentive) {
+        super(id, name, basicSalary);
+        this.incentive = incentive;
+    }
+    calculateSalary() {
+        return this.basicSalary + this.incentive;
+    }
+}
+const employee = new Employee(101, "Anivaran", 30000);
+const manager = new Manager(102, "Rahul", 50000, 10000);
+console.log("----- Employee Details -----");
+console.log("ID:", employee.id);
+console.log("Name:", employee.name);
+console.log("Basic Salary:", employee.basicSalary);
+console.log("Total Salary:", employee.calculateSalary());
+console.log("\n----- Manager Details -----");
+console.log("ID:", manager.id);
+console.log("Name:", manager.name);
+console.log("Basic Salary:", manager.basicSalary);
+console.log("Incentive:", manager.incentive);
+console.log("Total Salary:", manager.calculateSalary());
+//Qno:4
+class Product {
+    constructor(productId, productName, price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+    }
+    getDiscountedPrice(discount) {
+        return this.price - (this.price * discount / 100);
+    }
+    display() {
+        console.log("Product ID:", this.productId);
+        console.log("Product Name:", this.productName);
+        console.log("Price: ₹" + this.price);
+    }
+    static compareProducts(p1, p2) {
+        if (p1.price > p2.price) {
+            console.log("\nHigher Priced Product:");
+            p1.display();
+        } 
+        else if (p2.price > p1.price) {
+            console.log("\nHigher Priced Product:");
+            p2.display();
+        } 
+        else {
+            console.log("\nBoth products have the same price.");
+        }
+    }
+}
+class Electronics extends Product {
+    constructor(productId, productName, price, warranty) {
+        super(productId, productName, price);
+        this.warranty = warranty;
+    }
+    display() {
+        console.log("Product ID:", this.productId);
+        console.log("Product Name:", this.productName);
+        console.log("Price: ₹" + this.price);
+        console.log("Warranty:", this.warranty, "years");
+    }
+}
+const product1 = new Product(101, "Laptop Bag", 2000);
+const product2 = new Product(102, "Office Chair", 5000);
+const product3 = new Electronics(103, "Laptop", 60000, 2);
+console.log("----- Product 1 -----");
+product1.display();
+console.log("\nDiscounted Price (10%): ₹" + product1.getDiscountedPrice(10));
+console.log("\n----- Product 2 -----");
+product2.display();
+console.log("\nDiscounted Price (15%): ₹" + product2.getDiscountedPrice(15));
+console.log("\n----- Electronics -----");
+product3.display();
+console.log("\nDiscounted Price (10%): ₹" + product3.getDiscountedPrice(10));
+Product.compareProducts(product1, product2);
